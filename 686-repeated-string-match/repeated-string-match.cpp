@@ -1,20 +1,19 @@
 class Solution {
 public:
     int repeatedStringMatch(string a, string b) {
-        string rep = a;
+        string repeated = a;
         int count = 1;
-        
-        while(rep.size() < b.size()){
-            rep += a;
+
+        while(repeated.size() < b.size()){
+            repeated += a;
             count++;
         }
 
-        if(rep.find(b) != b.string :: npos)return count;
+        if(repeated.find(b) != b.string::npos)return count;
 
-        rep += a;
-        count++;
+        repeated += a;
+        if(repeated.find(b) != b.string::npos)return count+1;
 
-        if(rep.find(b) != b.string :: npos)return count;
         return -1;
     }
 };
