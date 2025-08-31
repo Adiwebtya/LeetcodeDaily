@@ -1,4 +1,5 @@
 class Solution {
+    private:
     bool solve(vector<vector<char>>& board){
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
@@ -10,23 +11,23 @@ class Solution {
                             board[i][j] = '.';
                         }
                     }
-                return false;
+                    return false;
                 }
             }
-        
         }
         return true;
     }
     bool isValid(int row,int col,vector<vector<char>>& board,char c){
         for(int i=0;i<9;i++){
-            if(board[row][i] == c || board[i][col] == c)return false;
+            if(board[i][col] == c || board[row][i] == c)return false;
 
             int subRow = 3*(row/3) + i/3;
             int subCol = 3*(col/3) + i%3;
 
             if(board[subRow][subCol] == c)return false;
+
         }
-        return true;
+        return true;  
     }
 public:
     void solveSudoku(vector<vector<char>>& board) {
