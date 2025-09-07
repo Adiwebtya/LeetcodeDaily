@@ -7,7 +7,6 @@ public:
         int longest = 0;
 
         for (int num : s) {
-            cout << num << " ";
             if (s.find(num - 1) == s.end()) {
                 int currNum = num;
                 int streak = 1;
